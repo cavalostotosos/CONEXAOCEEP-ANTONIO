@@ -7,8 +7,10 @@
 body {
     height: 100%;
     width: 100%;
-    overflow: hidden;
     font-family: sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: gray;
 }
 
 .telainicial {
@@ -45,13 +47,23 @@ body {
     padding: 0 2vw;
 }
 
+.imagemtitulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
 
 .imagemtitulo img {
     width: auto;
-    max-width: 40vw;
+    max-width: 80vw;
     height: auto;
     max-height: 80vh;
     object-fit: contain;
+    margin: 0;
+
+    filter: drop-shadow(30px 0px 30px rgba(0, 0, 0, 0.6))
 }
 
 .arthur {
@@ -64,8 +76,59 @@ body {
     max-width: 45vw;
     object-fit: contain;
 
-    filter: drop-shadow(15px 10px 15px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(30px 10px 30px rgba(0, 0, 0, 0.5));
     transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.historia {
+    min-height: 100vh;
+    padding-top: 4rem;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    padding: 4rem 2rem;
+    gap: 2rem;
+}
+
+.historia .imagem img {
+    max-height: 60vh;
+    object-fit: contain;
+}
+
+.historia .imagem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.historia .imagem2 {
+    display: none;
+}
+
+.historia .conteudo {
+    text-align: center;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.historia .conteudo h1 {
+    margin-bottom: 2rem;
+    color: white;
+    font-size: 2.5rem;
+}
+
+.historia .conteudo span {
+    color: red;
+    font-size: 4rem;
+}
+
+.historia .conteudo p {
+    font-size: 1.1rem;
+    padding: 0 0;
+    line-height: 1.8;
 }
 
 
@@ -161,4 +224,40 @@ body {
         justify-content: center;
         gap: 2rem;
     }
+}
+
+@media (max-width: 1024px) {
+    .historia {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 25vh;
+    }
+
+    .historia .imagem {
+        display: block;
+        margin-top: auto;
+    }
+
+    .historia .imagem img {
+        display: 70vw;
+        height: auto;
+    }
+
+    .historia .imagem2 img {
+        display: none;
+    }
+}
+
+
+@media (max-width: 624px) {
+    .historia {
+        flex-direction: column;
+    }
+
+    .historia .imagem {
+        display: none;
+    }
+
 }
